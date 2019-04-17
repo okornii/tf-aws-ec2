@@ -3,7 +3,7 @@ resource "aws_elasticache_replication_group" "redis_cluster" {
 
   replication_group_id = "${lookup(var.elastic-clusters[count.index], cluster_id)}"
   replication_group_description = "${lookup(var.elastic-clusters[count.index], cluster_description)}"
-  node_type = "${lookup(var.elastic-clusters[count.index],node_type)}"
+  node_type = "${lookup(var.elastic-clusters[count.index], node_type)}"
   port = 6379
   parameter_group_name = "${lookup(var.elastic-clusters[count.index], parameter_group_name)}"
   automatic_failover_enabled = true
