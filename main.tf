@@ -7,7 +7,6 @@ resource "aws_elasticache_replication_group" "redis_cluster" {
   port = 6379
   parameter_group_name = "${lookup(var.elastic-clusters[count.index], parameter_group_name)}"
   automatic_failover_enabled = true
-  subnet_group_name = "${var.subnet_group_name}"
   availability_zones = ["${var.availability_zones}"]
   security_group_ids = ["${lookup(var.elastic-clusters[count.index], securiy_group_id)}"]
   number_cache_clusters = "${lookup(var.elastic-clusters[count.index], num_cache_nodes)}"
