@@ -8,7 +8,7 @@ resource "aws_elasticache_replication_group" "redis_cluster" {
   parameter_group_name = "${lookup(var.elastic-clusters[count.index], "parameter_group_name")}"
   automatic_failover_enabled = true
   availability_zones = ["${var.availability_zones}"]
-  security_group_ids = ["${lookup(var.elastic-clusters[count.index], "securiy_group_id")}"]
+  security_group_ids = ["${var.securiy_group_id}"]
   number_cache_clusters = "${lookup(var.elastic-clusters[count.index], "num_cache_nodes")}"
   snapshot_retention_limit = "${lookup(var.elastic-clusters[count.index], "snapshot_retention_limit")}"
   engine_version = "${lookup(var.elastic-clusters[count.index], "engine_version")}"
