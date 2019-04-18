@@ -12,5 +12,5 @@ resource "aws_elasticache_replication_group" "redis_cluster" {
   number_cache_clusters = "${lookup(var.elastic-clusters[count.index], "num_cache_nodes")}"
   snapshot_retention_limit = "${lookup(var.elastic-clusters[count.index], "snapshot_retention_limit")}"
   engine_version = "${lookup(var.elastic-clusters[count.index], "engine_version")}"
- // subnet_group_name = "${lookup(var.elastic-clusters[count.index], "subnet_group_name")}"
+ subnet_group_name = "${var.subnet_group_name}"
 }

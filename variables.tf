@@ -9,3 +9,4 @@ variable "availability_zones" {
   type = "list"
 }
 variable "securiy_group_id" {}
+variable "subnet_group_name" {}
